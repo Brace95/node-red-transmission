@@ -1,0 +1,29 @@
+{
+  "name": "node-red-transmission",
+  "version": "1.0.0",
+  "description": "Transmission control for node-red",
+  "dependencies": {
+    "transmission": "0.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brace95/node-red-transmission.git"
+  },
+  "keywords": [
+    "node-red",
+    "transmission"
+  ],
+  "node-red": {
+    "nodes": {
+      "Transmission": "transmission.js"
+    }
+  },
+  "author": "Brandon Stenhouse",
+  "license": "Apache-v2.0",
+  "bugs": {
+    "url": "https://github.com/Brace95/node-red-transmission/issues"
+  },
+  "homepage": "https://github.com/Brace95/node-red-transmission#readme",
+  "readme": "node-red-transmission\n====================\n\n",
+  "readmeFilename": "README.md"
+}
