@@ -41,7 +41,7 @@
 <!-- Start all torrents node -->
 
 <script type="text/javascript">
-  RED.nodes.registerType('Start All Torrent',{
+  RED.nodes.registerType('start-all-torrent',{
     category: 'Transmission',
     color: '#a6bbcf',
     defaults: {
@@ -52,18 +52,18 @@
     outputs:1,
     icon: "transmission.png",
     label: function() {
-      return this.name || "Start All Torrent";
+      return this.name || "start-all-torrent";
     }
   });
 </script>
 
-<script type="text/x-red" data-template-name="lower-case">
+<script type="text/x-red" data-template-name="start-all-torrent">
   <div class="form-row">
-    <label for="node-input-config"><i class="fa fa-user"></i> Transmission API</label>
+    <label for="node-input-config"><i class="fa fa-user"></i>Transmission API</label>
     <input type="text" id="node-input-config">
   </div>
 </script>
 
-<script type="text/x-red" data-help-name="lower-case">
+<script type="text/x-red" data-help-name="start-all-torrent">
   <p>Starts all torrents on transmission server.</p>
 </script>
