@@ -6,13 +6,14 @@
       category: 'config',
       defaults: { },
       credentials: {
-        hostname: {required:true},
+        name: {required:true},
+        host: {required:true},
         port: {required:false},
         username: {required:false},
         password: {required:false}
       },
       label: function() {
-        return "Transmission API";
+        return this.name || "";
       },
       exportable: false,
     });
@@ -21,8 +22,12 @@
 
 <script type="text/x-red" data-template-name="transmission-config">
   <div class="form-row">
-    <label for="node-config-input-hostname"><i class="fa fa-bookmark"></i> Host Name</label>
-    <input class="input-append-left" type="text" id="node-config-input-hostname" style="width: 40%;" >
+    <label for="node-config-input-name"><i class="fa fa-bookmark"></i> Name</label>
+    <input class="input-append-left" type="text" id="node-config-input-name" style="width: 40%;" >
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-host"><i class="fa fa-bookmark"></i> Host</label>
+    <input class="input-append-left" type="text" id="node-config-input-host" style="width: 40%;" >
   </div>
   <div class="form-row">
     <label for="node-config-input-port"><i class="fa fa-bookmark"></i> Port</label>

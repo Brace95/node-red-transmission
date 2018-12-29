@@ -11,7 +11,7 @@ module.export = function (RED) {
     if (this.credentials && this.credentials.hostname) {
       this.Transmission = require("transmission");
       this.TransmissionAPI = new this.Transmission({
-        host: this.credentials.hostname,
+        host: this.credentials.host,
         port: this.credentials.port,
         username: this.credentials.username,
         password: this.credentials.password
@@ -23,15 +23,18 @@ module.export = function (RED) {
 
   RED.nodes.registerType("transmission-config", TransmissionAPINode, {
     credentials: {
-      hostname: { type:"text" },
-      port: { type:"text" },
-      username: { type:"text" },
-      password: { type:"text" }
+      name: {type: "text"},
+      host: {type:"text"},
+      port: {type:"text"},
+      username: {type:"text"},
+      password: {type:"text"}
     }
   });
 
-  function startAllTorrents (config) {
-    RED.nodes.createNode(this, config);
+  // Start all torrents
+  function startAllTorrents (n) {
+    RED.nodes.createNode(this, n);
+    this.config = RED.node.getNode(n.config);
     let node = this;
     var TransmissionAPI = this.config ? this.config.TransmissionAPI : null;
 
