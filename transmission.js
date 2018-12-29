@@ -23,7 +23,6 @@ module.export = function (RED) {
 
   RED.nodes.registerType("transmission-config", TransmissionAPINode, {
     credentials: {
-      name: {type: "text"},
       host: {type:"text"},
       port: {type:"text"},
       username: {type:"text"},

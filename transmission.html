@@ -4,9 +4,10 @@
   (function() {
     RED.nodes.registerType('transmission-config',{
       category: 'config',
-      defaults: { },
+      defaults: {
+        name: {value: ""}
+      },
       credentials: {
-        name: {required:true},
         host: {required:true},
         port: {required:false},
         username: {required:false},
@@ -22,8 +23,8 @@
 
 <script type="text/x-red" data-template-name="transmission-config">
   <div class="form-row">
-    <label for="node-config-input-name"><i class="fa fa-bookmark"></i> Name</label>
-    <input class="input-append-left" type="text" id="node-config-input-name" style="width: 40%;" >
+    <label for="node-input-name"><i class="fa fa-bookmark"></i> Name</label>
+    <input class="input-append-left" type="text" id="node-input-name" style="width: 40%;" >
   </div>
   <div class="form-row">
     <label for="node-config-input-host"><i class="fa fa-bookmark"></i> Host</label>
