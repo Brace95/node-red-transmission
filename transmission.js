@@ -41,7 +41,7 @@ module.export = function (RED) {
       node.status({fill:"red", shape:"ring", text:"Missing Transmission credentials"});
       return;
     }
-    
+
     node.on('input', function (msg) {
       TransmissionAPI.get(function (err, result) {
         if (err) {
@@ -57,6 +57,6 @@ module.export = function (RED) {
     });
   }
 
-  RED.nodes.registerType("Start All Torrent", startAllTorrents);
+  RED.nodes.registerType("start-all-torrent", startAllTorrents);
 
 }
