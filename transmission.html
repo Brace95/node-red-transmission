@@ -1,23 +1,6 @@
 <!-- Transmission Config -->
 
-<script type="text/javascript">
-  (function() {
-    RED.nodes.registerType('transmission-config',{
-      category: 'config',
-      defaults: {
-        host: {required:true, value:"127.0.0.1"},
-        port: {required:false, value:9091},
-        user: {required:false},
-        pass: {required:false}
-      },
-      label: function() {
-        return "TransmissionAPI";
-      },
-      exportable: true,
-    });
-  })();
-</script>
-
+<!-- Input items -->
 <script type="text/x-red" data-template-name="transmission-config">
   <div class="form-row">
     <label for="node-config-input-host"><i class="fa fa-bookmark"></i> Host</label>
@@ -37,32 +20,53 @@
   </div>
 </script>
 
-<!-- Start all torrents node -->
-
+<!-- Function -->
 <script type="text/javascript">
-  RED.nodes.registerType('start-all-torrent',{
-    category: 'Transmission',
-    color: '#a6bbcf',
-    defaults: {
-      config: {type:"transmission-config",required:true},
-      name: {value:""}
-    },
-    inputs:1,
-    outputs:1,
-    icon: "transmission.png",
-    label: function() {
-      return this.name || "start-all-torrent";
-    }
-  });
+  (function() {
+    RED.nodes.registerType('transmission-config',{
+      category: 'config',
+      defaults: {
+        host: {required:true, value:"127.0.0.1"},
+        port: {required:true, value:9091},
+        user: {required:false},
+        pass: {required:false}
+      },
+      label: function() {
+        return "TransmissionAPI";
+      },
+      exportable: true,
+    });
+  })();
 </script>
 
-<script type="text/x-red" data-template-name="start-all-torrent">
+<!-- Start all torrents node -->
+
+<!-- Input items -->
+<script type="text/x-red" data-template-name="Start all Torrents">
   <div class="form-row">
     <label for="node-input-config"><i class="fa fa-user"></i> Transmission API</label>
     <input type="text" id="node-input-config">
   </div>
 </script>
 
-<script type="text/x-red" data-help-name="start-all-torrent">
+<!-- Description -->
+<script type="text/x-red" data-help-name="Start all Torrents">
   <p>Starts all torrents on transmission server.</p>
+</script>
+
+<!-- Function -->
+<script type="text/javascript">
+  RED.nodes.registerType('Start all Torrents',{
+    category: 'Transmission',
+    color: '#a6bbcf',
+    defaults: {
+      config: {type:"transmission-config", required:true}
+    },
+    inputs:1,
+    outputs:1,
+    icon: "transmission.png",
+    label: function() {
+      return "Start all Torrents";
+    }
+  });
 </script>

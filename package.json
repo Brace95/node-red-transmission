@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Transmission control for node-red",
   "dependencies": {
-    "transmission": "0.4.2"
+    "transmission": "0.4.9"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Brace95/node-red-transmission.git"
+    "url": "https://github.com/Brace95/node-red-transmission.git"
   },
   "keywords": [
     "node-red",

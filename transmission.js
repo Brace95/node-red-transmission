@@ -5,10 +5,9 @@ module.export = function (RED) {
   // Setup TransmissionAPI Node
   function transmissionAPINode (n) {
     RED.nodes.createNode(this, n);
-    var node = this;
 
     // Check input and create TransmissionAPI node
-    if (n && n.host) {
+    if (n && n.host && n.port) {
       this.Transmission = require("transmission");
       this.TransmissionAPI = new this.Transmission({
         host: n.host,
@@ -16,8 +15,6 @@ module.export = function (RED) {
         username: n.user,
         password: n.pass
       });
-
-      node.log( "Reauthenticating Transmission API with " + n.host);
     }
   }
 
@@ -28,7 +25,8 @@ module.export = function (RED) {
     RED.nodes.createNode(this, n);
     this.config = RED.node.getNode(n.config);
     var node = this;
-    var TransmissionAPI = this.config ? this.config.TransmissionAPI : null;
+
+    var TransmissionAPI = node.config ? node.config.TransmissionAPI : null;
 
     //  Check for Transmission API Config
     if (!TransmissionAPI) {
@@ -52,6 +50,6 @@ module.export = function (RED) {
     });
   }
 
-  RED.nodes.registerType("start-all-torrent", startAllTorrents);
+  RED.nodes.registerType("Start all Torrents", startAllTorrents);
 
 }
