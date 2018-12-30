@@ -3,7 +3,7 @@ module.export = function (RED) {
   "use strict";
 
   // Setup TransmissionAPI Node
-  function TransmissionAPINode (n) {
+  function transmissionAPINode (n) {
     RED.nodes.createNode(this, n);
     var node = this;
 
@@ -21,13 +21,13 @@ module.export = function (RED) {
     }
   }
 
-  RED.nodes.registerType("transmission-config", TransmissionAPINode);
+  RED.nodes.registerType("transmission-config", transmissionAPINode);
 
   // Start all torrents
   function startAllTorrents (n) {
     RED.nodes.createNode(this, n);
     this.config = RED.node.getNode(n.config);
-    let node = this;
+    var node = this;
     var TransmissionAPI = this.config ? this.config.TransmissionAPI : null;
 
     //  Check for Transmission API Config
