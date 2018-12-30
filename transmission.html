@@ -5,16 +5,13 @@
     RED.nodes.registerType('transmission-config',{
       category: 'config',
       defaults: {
-        name: {value: ""}
-      },
-      credentials: {
-        host: {required:true},
-        port: {required:false},
-        username: {required:false},
-        password: {required:false}
+        host: {required:true, value:"127.0.0.1"},
+        port: {required:false, value:9091},
+        user: {required:false},
+        pass: {required:false}
       },
       label: function() {
-        return this.name || "";
+        return "TransmissionAPI";
       },
       exportable: false,
     });
@@ -22,10 +19,6 @@
 </script>
 
 <script type="text/x-red" data-template-name="transmission-config">
-  <div class="form-row">
-    <label for="node-input-name"><i class="fa fa-bookmark"></i> Name</label>
-    <input class="input-append-left" type="text" id="node-input-name" style="width: 40%;" >
-  </div>
   <div class="form-row">
     <label for="node-config-input-host"><i class="fa fa-bookmark"></i> Host</label>
     <input class="input-append-left" type="text" id="node-config-input-host" style="width: 40%;" >
@@ -35,12 +28,12 @@
     <input class="input-append-left" type="text" id="node-config-input-port" style="width: 40%;" >
   </div>
   <div class="form-row">
-    <label for="node-config-input-username"><i class="fa fa-bookmark"></i> User</label>
-    <input class="input-append-left" type="text" id="node-config-input-username" style="width: 40%;" >
+    <label for="node-config-input-user"><i class="fa fa-bookmark"></i> User</label>
+    <input class="input-append-left" type="text" id="node-config-input-user" style="width: 40%;" >
   </div>
   <div class="form-row">
-    <label for="node-config-input-password"><i class="fa fa-bookmark"></i> Password</label>
-    <input class="input-append-left" type="text" id="node-config-input-password" style="width: 40%;" >
+    <label for="node-config-input-pass"><i class="fa fa-bookmark"></i> Password</label>
+    <input class="input-append-left" type="text" id="node-config-input-pass" style="width: 40%;" >
   </div>
 </script>
 
